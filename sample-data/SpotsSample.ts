@@ -12,7 +12,7 @@ const SpotsSample = [
         imageLinks: [forestCenter1, forestCenter2],
         locationLink: "",
         ratingIds: ["1","2","3","4"],
-        tags: ["washrooms"]
+        tags: ["quiet", "outlets", "microwaves", "food-near", "open-now", "washrooms"]
     },
     {
         id: "2",
@@ -21,8 +21,10 @@ const SpotsSample = [
         imageLinks: [nestBack1, nestBack2, nestBack3],   
         locationLink: "",
         ratingIds: ["5","6","7"],
-        tags: ["quiet"],
+        tags: [ "quiet", "food-near", "open-now", "washrooms"],
     },
 ]
 
 export default SpotsSample;
+
+// Tags: quiet outlets study-rooms microwaves food-near open-now washrooms
