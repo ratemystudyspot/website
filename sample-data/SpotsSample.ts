@@ -11,7 +11,7 @@ const SpotsSample = [
         averageRating: 4.2,
         imageLinks: [forestCenter1, forestCenter2],
         locationLink: "",
-        ratingIds: [],
+        ratingIds: ["1","2","3","4"],
         tags: ["washrooms"]
     },
     {
@@ -20,7 +20,7 @@ const SpotsSample = [
         averageRating: 4.4,
         imageLinks: [nestBack1, nestBack2, nestBack3],   
         locationLink: "",
-        ratingIds: [],
+        ratingIds: ["5","6","7"],
         tags: ["quiet"],
     },
 ]
