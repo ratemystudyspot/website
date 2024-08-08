@@ -10,6 +10,12 @@
     "postinstall": "husky",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "*.ts?(x)": [
+      "eslint --fix",
+      "yarn prettier --write"
+    ]
+  },
   "dependencies": {
     "next": "14.2.5",
     "react": "^18",
