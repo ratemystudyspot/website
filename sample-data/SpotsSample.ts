@@ -9,7 +9,7 @@ const SpotsSample = [
         id: "1",
         name: "Nest Backside",
         averageRating: 4.2,
-        imageLinks: [forestCenter1, forestCenter2],
+        imageLinks: [nestBack1, nestBack2, nestBack3],
         locationLink: "",
         ratingIds: ["1","2","3","4"],
         tags: ["quiet", "outlets", "microwaves", "food-near", "open-now", "washrooms"]
@@ -18,7 +18,7 @@ const SpotsSample = [
         id: "2",
         name: "Forestry Building",
         averageRating: 4.4,
-        imageLinks: [nestBack1, nestBack2, nestBack3],   
+        imageLinks: [forestCenter1, forestCenter2],   
         locationLink: "",
         ratingIds: ["5","6","7"],
         tags: [ "quiet", "food-near", "open-now", "washrooms"],
