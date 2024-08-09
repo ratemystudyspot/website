@@ -20,8 +20,8 @@ export default function SpotPreview({
   tags: string[];
 }) {
   return (
-    <div className="m-[10px] flex h-[327px] w-[307px] cursor-pointer flex-col items-center rounded-[20px] bg-white p-3">
-      <div className="h-[65%] w-full overflow-hidden rounded-[17px]">
+    <div className="m-[0.8rem] flex h-[20.5rem] w-[19rem] cursor-pointer flex-col items-center rounded-[1.25rem] bg-white p-3">
+      <div className="h-[65%] w-full overflow-hidden rounded-[1.0625rem]">
         <Image
           className="size-full object-cover"
           src={imageLink}
@@ -31,10 +31,10 @@ export default function SpotPreview({
         />
       </div>
       <div className="mt-2 w-full">
-        <div className="ml-1 text-[20.32px] font-semibold text-gray-900">
+        <div className="ml-1 text-[1.25rem] font-semibold text-gray-900">
           {title}
         </div>
-        <div className="ml-1 text-[20.32px] font-semibold text-gray-900">
+        <div className="ml-1 text-[1.25rem] font-semibold text-gray-900">
           {location}
         </div>
         <RatingInfo averageRating={averageRating} totalReviews={totalReviews} />
