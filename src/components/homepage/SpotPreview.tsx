@@ -34,6 +34,9 @@ export default function SpotPreview({
         <div className="ml-1 text-[20.32px] font-semibold text-gray-900">
           {title}
         </div>
+        <div className="ml-1 text-[20.32px] font-semibold text-gray-900">
+          {location}
+        </div>
         <RatingInfo averageRating={averageRating} totalReviews={totalReviews} />
         <TagIcons tags={tags} />
       </div>
