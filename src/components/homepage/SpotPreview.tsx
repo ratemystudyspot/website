@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 
 import RatingInfo from "./RatingInfo";
 import TagIcons from "./TagIcons";
 
 export default function SpotPreview({
+  id,
   title,
   location,
   imageLink,
@@ -12,6 +16,7 @@ export default function SpotPreview({
   averageRating,
   tags,
 }: {
+  id: string;
   title: string;
   location: string;
   imageLink: StaticImageData;
@@ -19,8 +24,12 @@ export default function SpotPreview({
   averageRating: number;
   tags: string[];
 }) {
+  const router = useRouter();
   return (
-    <div className="m-[0.8rem] flex h-[20.5rem] w-[19rem] cursor-pointer flex-col items-center rounded-[1.25rem] bg-white p-3">
+    <div
+      className="m-[0.8rem] flex h-[20.5rem] w-[19rem] cursor-pointer flex-col items-center rounded-[1.25rem] bg-white p-3"
+      onClick={() => router.push(`/studyspot/${id}`)}
+    >
       <div className="h-[65%] w-full overflow-hidden rounded-[1.0625rem]">
         <Image
           className="size-full object-cover"

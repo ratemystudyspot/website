@@ -8,6 +8,7 @@ export default function Home() {
       {sSample.map((spot) => (
         <Preview
           key={spot.id}
+          id={spot.id}
           title={spot.name}
           location={spot.locationLink}
           imageLink={spot.imageLinks[0]}
