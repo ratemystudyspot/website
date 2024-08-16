@@ -7,13 +7,13 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { FaLock, FaUser } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
-type RegisterFormInputs = {
+type VerificationFormInputs = {
   name: string;
   email: string;
   password: string;
 };
 
-const RegisterForm = () => {
+const VerificationForm = () => {
   const [duplicate, setDuplicate] = useState(false);
   const loading = useRef(false);
   const router = useRouter();
@@ -30,7 +30,7 @@ const RegisterForm = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<RegisterFormInputs> = async (data) => {
+  const onSubmit: SubmitHandler<VerificationFormInputs> = async (data) => {
     if (loading.current) return; // prevent user from spam creating accounts
     loading.current = true;
     console.log(data);
@@ -159,4 +159,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default VerificationForm;
