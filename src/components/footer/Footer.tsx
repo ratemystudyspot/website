@@ -10,6 +10,7 @@ const Footer = () => {
         
         <span className="block text-sm text-center text-gray-500">© 2024 RateMyStudySpot. All Rights Reserved.</span>
 
+        {/*The logos for the bottom*/}
         <ul className="flex justify-center mt-5 space-x-5">
             <li>
                 <a href="https://github.com" className="text-gray-500 hover:text-gray-900" aria-label="Github">
