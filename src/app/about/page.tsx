@@ -8,7 +8,7 @@ const peopleObject = {
     linkedin: "http://google.ca/",
     github: "http://google.ca/",
     instagram: "http://google.ca/",
-    message: " yap yap yap",
+    message: "yap yap yap yap yap yap yap yap yap yap yap",
   },
   Person2: {
     name: "leo shang",
@@ -32,7 +32,7 @@ export default function Home() {
         </h1>
         <h2 className="text-xl">Yap</h2>
       </div>
-      <div className="flex h-96 w-full flex-row gap-8">
+      <div className="flex min-h-96 w-full flex-row justify-center gap-8">
         <PersonCard person={peopleObject.Person1} />
         <PersonCard person={peopleObject.Person2} />
       </div>

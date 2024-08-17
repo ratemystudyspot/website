@@ -18,7 +18,7 @@ export default function PersonCard({
   person: { name, title, linkedin, github, instagram, message },
 }: PersonCardProps) {
   return (
-    <div className="w-1/2 rounded-xl bg-white p-8 shadow-md">
+    <div className="w-1/2 max-w-xl rounded-xl bg-white p-8 shadow-md">
       <div className="flex flex-row justify-between">
         <div className="flex gap-4">
           <Image
