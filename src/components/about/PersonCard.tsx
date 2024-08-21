@@ -1,11 +1,11 @@
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-
-import placeholder from "@/src/components/about/placeholder.png";
 
 interface PersonCardProps {
   person: {
     name: string;
+    image: StaticImageData;
     title: string;
     linkedin: string;
     github: string;
@@ -15,7 +15,7 @@ interface PersonCardProps {
 }
 
 export default function PersonCard({
-  person: { name, title, linkedin, github, instagram, message },
+  person: { name, title, linkedin, github, instagram, message, image },
 }: PersonCardProps) {
   return (
     <div className="w-1/2 max-w-xl rounded-xl bg-white p-8 shadow-md">
@@ -28,7 +28,7 @@ export default function PersonCard({
               width: "150px",
               height: "150px",
             }}
-            src={placeholder}
+            src={image}
             alt="profile picture"
           />
           <div className="flex flex-col justify-center">
@@ -37,13 +37,16 @@ export default function PersonCard({
           </div>
         </div>
 
-        <div className="flex flex-col justify-center gap-1">
-          <FaInstagram className="size-8" />
-          <a href={instagram}></a>
-          <FaGithub className="size-8" />
-          <a href={github}></a>
-          <FaLinkedin className="size-8" />
-          <a href={linkedin}></a>
+        <div className="flex flex-col justify-center gap-2">
+          <a href={instagram} target="_blank" rel="noopener noreferrer">
+            <FaInstagram className="size-8" />
+          </a>
+          <a href={github} target="_blank" rel="noopener noreferrer">
+            <FaGithub className="size-8" />
+          </a>
+          <a href={linkedin} target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="size-8" />
+          </a>
         </div>
       </div>
       <div className="mt-4 h-px w-full bg-zinc-400" />
