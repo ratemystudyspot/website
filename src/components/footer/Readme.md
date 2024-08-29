@@ -47,7 +47,7 @@ logoText="relative text-transparent bg-clip-text bg-black hover:text-sky-600 hov
   logoText="text-gray-900 font-semibold"
 />
 ```
-![Diagonal Box Layout alt text](https://github.com/user-attachments/assets/3fb39b64-7aaa-47a1-a793-ac1e75b45504)
+![Diagnoal footer alt text](https://github.com/user-attachments/assets/a0f84a72-9380-4897-b6b5-da9d840b6cd9)
     
 Example Usage: 
 ```javascript
