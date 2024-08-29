@@ -30,7 +30,7 @@ This component was written by Dricmoy Bhattacharjee.
   dateText="text-gray-400"
   logoText="text-white font-bold hover:text-sky-500 transition duration-300"
 />
-![alt text](dark_mode.png)
+![image](https://github.com/user-attachments/assets/9fdd1375-e312-46ba-885f-c4b0d85dcc38)
 
 // Diagonal Box Layout
 <Footer
@@ -41,9 +41,10 @@ This component was written by Dricmoy Bhattacharjee.
   dateText="text-gray-600"
   logoText="text-gray-900 font-semibold"
 />
-![alt text](random.png)
+![image](https://github.com/user-attachments/assets/3fb39b64-7aaa-47a1-a793-ac1e75b45504)
 
 Example Usage: 
+```javascript
 import Footer from "../components/footer/Footer";
 
 export default function Home() {
@@ -67,3 +68,4 @@ export default function Home() {
     </main>
   );
 }
+
