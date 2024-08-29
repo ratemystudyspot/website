@@ -42,7 +42,7 @@ export default function Footer({
                 alt="RateMyStudySpot Logo"
                 width={40}
                 height={40}
-                className="rounded-full border-2 border-blue-100 shadow-md transition-transform duration-300 hover:scale-110"
+                className="rounded-full border-2 border-blue-100 shadow-md transition-transform duration-300 hover:scale-105"
               />
             </Link>
             <p className={clsx("text-sm font-semibold", dateText)}>
