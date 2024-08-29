@@ -1,8 +1,7 @@
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaGlobe, FaInstagram, FaLinkedin } from "react-icons/fa";
-
-import "./footer.css";
 
 interface FooterProps {
   RateMyStudySpot: {
@@ -11,76 +10,128 @@ interface FooterProps {
     github: string;
     logo: string;
   };
+  bgFooter?: string;
+  footerLink?: string;
+  logoText?: string;
+  dateText?: string;
+  onLinkHover?: string;
 }
 
-export default function Footer({ RateMyStudySpot }: FooterProps) {
+export default function Footer({
+  RateMyStudySpot,
+  bgFooter = "bg-gray-800",
+  footerLink = "text-white",
+  logoText = "#ffffff",
+  dateText = "#ffffff",
+  onLinkHover = "hover:text-blue-400",
+}: FooterProps) {
   return (
-    <footer className="w-full bg-white pb-4 pt-4">
-      {/* Logo and Navigation Links */}
-      <div className="container mx-auto mb-4 px-4 text-black">
-        <div className="flex flex-col items-center">
-          <div className="mb-2 flex space-x-4">
-            <Link href="#" className="custom-underline text-md font-sans">
-              Support /
-            </Link>
-            <Link href="#" className="custom-underline text-md font-sans">
-              Contact Us /
-            </Link>
-            <Link href="#" className="custom-underline text-md font-sans">
-              Follow Us /
-            </Link>
-            <Link href="#" className="custom-underline text-md font-sans">
-              About Us
-            </Link>
-          </div>
-          <hr className="border-y-1 mx-4 my-2 w-full rounded-md border-black" />
-        </div>
-      </div>
-
-      {/* Bottom Section with Icons and Text */}
-      <div className="bottom-section container mx-auto px-4 text-black">
-        <div className="flex flex-col items-center justify-between md:flex-row">
+    <footer
+      className={clsx(
+        "w-full border-b border-t border-gray-700 p-2",
+        bgFooter, // Tailwind class for background color
+      )}
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col items-center md:flex-row md:justify-between">
           {/* Centered Content */}
-          <div className="mb-4 flex items-center space-x-2 text-center md:mb-0 md:text-left">
+          <div className="mb-4 flex items-center space-x-3 text-center md:mb-0 md:text-left">
             <Link href="#">
               <Image
-                src="/logo192.png" // Ensure the path is correct relative to the public directory
+                src={RateMyStudySpot.logo}
                 alt="RateMyStudySpot Logo"
-                width={40} // Adjust width as needed
-                height={40} // Adjust height as needed
-                className="cursor-pointer rounded-full" // Make logo rounded and add pointer cursor
+                width={40}
+                height={40}
+                className="rounded-full border-2 border-blue-100 shadow-md transition-transform duration-300 hover:scale-110"
               />
             </Link>
-            <p className="typing-animation text-md font-sans">
-              &copy; 2024 RateMyStudySpot.ca
+            <p className={clsx("text-sm font-semibold", dateText)}>
+              &copy; 2024{" "}
+              <span className={clsx(logoText)}>RateMyStudySpot.ca</span>
             </p>
           </div>
 
+          {/* Links Section */}
+          <div className="mb-4 flex flex-wrap justify-center space-x-6 text-sm font-medium md:mb-0">
+            <Link
+              href="#"
+              className={clsx(
+                "footer-link",
+                footerLink,
+                onLinkHover,
+                "transition-colors duration-300",
+              )}
+            >
+              Support
+            </Link>
+            <Link
+              href="#"
+              className={clsx(
+                "footer-link",
+                footerLink,
+                onLinkHover,
+                "transition-colors duration-300",
+              )}
+            >
+              Contact Us
+            </Link>
+            <Link
+              href="#"
+              className={clsx(
+                "footer-link",
+                footerLink,
+                onLinkHover,
+                "transition-colors duration-300",
+              )}
+            >
+              Follow Us
+            </Link>
+            <Link
+              href="#"
+              className={clsx(
+                "footer-link",
+                footerLink,
+                onLinkHover,
+                "transition-colors duration-300",
+              )}
+            >
+              About Us
+            </Link>
+          </div>
+
           {/* Right Side */}
-          <div className="flex flex-col items-center space-y-2 md:flex-row md:space-x-4 md:space-y-0">
-            <div className="flex items-center space-x-2">
-              <FaGlobe className="text-xs text-gray-600 md:text-sm" />
-              <span className="text-md md:text-md font-sans">English (CA)</span>
+          <div className="flex flex-col items-center space-y-3 md:flex-row md:space-x-6 md:space-y-0">
+            <div
+              className={clsx(
+                "flex items-center space-x-2 text-sm",
+                footerLink,
+              )}
+            >
+              <FaGlobe className="text-black-300 transition-colors duration-300 hover:text-gray-600" />
+              <span>English (CA)</span>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex space-x-4">
               <a
                 href={RateMyStudySpot.github}
-                className="flex items-center space-x-1 text-gray-600 hover:underline"
+                className="text-black transition-colors duration-300 hover:text-gray-900"
+                aria-label="GitHub"
               >
-                <FaGithub className="text-lg md:text-lg" />
+                <FaGithub className="text-2xl transition-transform duration-300 hover:scale-110" />
               </a>
               <a
                 href={RateMyStudySpot.instagram}
-                className="flex items-center space-x-1 text-red-500 hover:underline"
+                className="text-pink-500 transition-colors duration-300 hover:text-pink-700"
+                aria-label="Instagram"
               >
-                <FaInstagram className="text-lg md:text-lg" />
+                <FaInstagram className="text-2xl transition-transform duration-300 hover:scale-110" />
               </a>
               <a
                 href="#"
-                className="flex items-center space-x-1 text-blue-500 hover:underline"
+                className="text-blue-700 transition-colors duration-300 hover:text-blue-600"
+                aria-label="LinkedIn"
               >
-                <FaLinkedin className="text-lg md:text-lg" />
+                <FaLinkedin className="text-2xl transition-transform duration-300 hover:scale-110" />
               </a>
             </div>
           </div>
