@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaGlobe, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -9,11 +10,28 @@ interface FooterProps {
     github: string;
     logo: string;
   };
+  bgColor?: string; // Optional background color prop
+  textColor?: string; // Optional text color prop
+  company_text_colour?: string;
+  date_text_colour?: string;
+  textHoverColor?: string; // New optional prop for hover color
 }
 
-export default function Footer({ RateMyStudySpot }: FooterProps) {
+export default function Footer({
+  RateMyStudySpot,
+  bgColor = "bg-gray-800",
+  textColor = "text-white", // Default Tailwind color
+  date_text_colour = "#ffffff",
+  company_text_colour = "#ffffff",
+  textHoverColor = "hover:text-blue-400", // Default Tailwind hover color
+}: FooterProps) {
   return (
-    <footer className="w-full border-b border-t border-gray-700 p-2 text-white">
+    <footer
+      className={clsx(
+        "w-full border-b border-t border-gray-700 p-2",
+        bgColor, // Tailwind class for background color
+      )}
+    >
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center md:flex-row md:justify-between">
           {/* Centered Content */}
@@ -27,9 +45,11 @@ export default function Footer({ RateMyStudySpot }: FooterProps) {
                 className="transform cursor-pointer rounded-full transition-transform hover:scale-110"
               />
             </Link>
-            <p className="text-sm font-semibold">
+            <p className={clsx("text-sm font-semibold", date_text_colour)}>
               &copy; 2024{" "}
-              <span className="text-blue-300">RateMyStudySpot.ca</span>
+              <span className={clsx(company_text_colour)}>
+                RateMyStudySpot.ca
+              </span>
             </p>
           </div>
 
@@ -37,25 +57,45 @@ export default function Footer({ RateMyStudySpot }: FooterProps) {
           <div className="mb-4 flex flex-wrap justify-center space-x-6 text-sm font-medium md:mb-0">
             <Link
               href="#"
-              className="text-blue-200 transition-colors duration-300 hover:text-blue-400"
+              className={clsx(
+                "footer-link",
+                textColor,
+                textHoverColor,
+                "transition-colors duration-300",
+              )}
             >
               Support
             </Link>
             <Link
               href="#"
-              className="text-blue-200 transition-colors duration-300 hover:text-blue-400"
+              className={clsx(
+                "footer-link",
+                textColor,
+                textHoverColor,
+                "transition-colors duration-300",
+              )}
             >
               Contact Us
             </Link>
             <Link
               href="#"
-              className="text-blue-200 transition-colors duration-300 hover:text-blue-400"
+              className={clsx(
+                "footer-link",
+                textColor,
+                textHoverColor,
+                "transition-colors duration-300",
+              )}
             >
               Follow Us
             </Link>
             <Link
               href="#"
-              className="text-blue-200 transition-colors duration-300 hover:text-blue-400"
+              className={clsx(
+                "footer-link",
+                textColor,
+                textHoverColor,
+                "transition-colors duration-300",
+              )}
             >
               About Us
             </Link>
@@ -63,29 +103,31 @@ export default function Footer({ RateMyStudySpot }: FooterProps) {
 
           {/* Right Side */}
           <div className="flex flex-col items-center space-y-3 md:flex-row md:space-x-6 md:space-y-0">
-            <div className="flex items-center space-x-2 text-sm">
-              <FaGlobe className="text-gray-300 transition-colors duration-300 hover:text-gray-100" />
+            <div
+              className={clsx("flex items-center space-x-2 text-sm", textColor)}
+            >
+              <FaGlobe className="text-black-300 transition-colors duration-300 hover:text-gray-600" />
               <span>English (CA)</span>
             </div>
 
             <div className="flex space-x-4">
               <a
                 href={RateMyStudySpot.github}
-                className="text-gray-300 transition-colors duration-300 hover:text-gray-100"
+                className="text-black transition-colors duration-300 hover:text-gray-900"
                 aria-label="GitHub"
               >
                 <FaGithub className="text-2xl transition-transform duration-300 hover:scale-110" />
               </a>
               <a
                 href={RateMyStudySpot.instagram}
-                className="text-pink-400 transition-colors duration-300 hover:text-pink-300"
+                className="text-pink-500 transition-colors duration-300 hover:text-pink-700"
                 aria-label="Instagram"
               >
                 <FaInstagram className="text-2xl transition-transform duration-300 hover:scale-110" />
               </a>
               <a
                 href="#"
-                className="text-blue-400 transition-colors duration-300 hover:text-blue-300"
+                className="text-blue-700 transition-colors duration-300 hover:text-blue-600"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="text-2xl transition-transform duration-300 hover:scale-110" />
