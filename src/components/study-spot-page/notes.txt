@@ -1,0 +1,3 @@
+Here we will store the components for study spot page!
+
+I pushing this directly to branch so that the folder can show up when pulled.
